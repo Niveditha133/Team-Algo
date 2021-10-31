@@ -11,18 +11,15 @@ public class Cursor : MonoBehaviour
     public LayerMask SelectMask;
     public LayerMask PlaceMask;
     private RectTransform rect;
-    private bool _ishovering = false;
-    private bool _isRelocating = false;
-    private GameObject _selectedFactory;
-    public Material factorydefault;
-    public Material factoryhover;
-    public Material factoryselected;
 
     // Start is called before the first frame update
     private void Start()
     {
         rect = GetComponent<RectTransform>();
     }
+
+    private bool _isRelocating = false;
+    private GameObject _selectedFactory;
 
     // Update is called once per frame
     private void Update()
@@ -31,7 +28,6 @@ public class Cursor : MonoBehaviour
         Debug.DrawRay(ray.origin, ray.direction * 100, Color.black);
 
         RaycastHit hit;
-
         if (_isRelocating)
         {
             if (Physics.Raycast(ray.origin, ray.direction, out hit, Mathf.Infinity, PlaceMask))
@@ -43,8 +39,6 @@ public class Cursor : MonoBehaviour
                     Factory factory = _selectedFactory.GetComponent<Factory>();
                     factory.enabled = true;
                     _isRelocating = false;
-                    _selectedFactory.GetComponent<MeshRenderer>().material = factorydefault;
-                    Debug.Log("Please Work");
                 }
             }
         }
@@ -53,24 +47,12 @@ public class Cursor : MonoBehaviour
             if (Physics.Raycast(ray.origin, ray.direction, out hit, Mathf.Infinity, SelectMask))
             {
                 Debug.Log("Factory");
-                _selectedFactory = hit.transform.gameObject;
-                _ishovering = true;
-                if (_ishovering)
-                {
-                    _selectedFactory.GetComponent<MeshRenderer>().material = factoryhover;
-                }
-                else
-                {
-                    _selectedFactory.GetComponent<MeshRenderer>().material = factorydefault;
-                }
-
                 if (Input.GetButtonDown("South"))
                 {
-                    Debug.Log("ShowMeTheColor");
+                    _selectedFactory = hit.transform.gameObject;
                     Factory factory = _selectedFactory.GetComponent<Factory>();
                     factory.enabled = false;
                     _isRelocating = true;
-                    _selectedFactory.GetComponent<MeshRenderer>().material = factoryselected;
                 }
             }
         }
@@ -91,8 +73,6 @@ public class Cursor : MonoBehaviour
         x = Mathf.Clamp(x, -width / 2, width / 2);
         float y = anchor.y + joy.y * multiplier;
         y = Mathf.Clamp(y, -height / 2, height / 2);
-
-        _ishovering = false;
 
         //set anchor
         anchor = new Vector2(x, y);
