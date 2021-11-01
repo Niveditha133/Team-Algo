@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1647853876}
   m_Layer: 7
   m_Name: Factory
-  m_TagString: Untagged
+  m_TagString: Factory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,11 +109,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d686e2b219aebb46a47ac7612a7a418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefab1: {fileID: 1774373424644102876, guid: 5df521d6284f4a546a3814d6ff3758b5, type: 3}
-  Prefab2: {fileID: 2051652454952903287, guid: 2737e76821c7b8a4ea172d41dae0dae2, type: 3}
+  Prefab1: {fileID: 7237580640192784885, guid: db8581eb6518bb44e850175001991776, type: 3}
+  Prefab2: {fileID: 7237580640192784885, guid: db8581eb6518bb44e850175001991776, type: 3}
   Prefabs:
-  - {fileID: 1774373424644102876, guid: 5df521d6284f4a546a3814d6ff3758b5, type: 3}
-  - {fileID: 2051652454952903287, guid: 2737e76821c7b8a4ea172d41dae0dae2, type: 3}
+  - {fileID: 7237580640192784885, guid: db8581eb6518bb44e850175001991776, type: 3}
   TargetTag: Target
-  MakeLimit: 12
+  MakeLimit: 7
+  Target: {fileID: 0}
   MakeRate: 2

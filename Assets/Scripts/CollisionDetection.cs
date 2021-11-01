@@ -16,7 +16,7 @@ public class CollisionDetection : MonoBehaviour
     {
         if (!_mobileUnit._reachedTarget) { return; }
         GameObject go = other.gameObject;
-        if (go.tag != "Manager.Instance.AgentTag") { return; }
+        if (go.tag != "Agent") { return; }
         _mobileUnit.StartConfigure(go);
     }
 }

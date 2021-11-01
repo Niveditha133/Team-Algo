@@ -33,7 +33,7 @@ public class Factory : MonoBehaviour
         //destroy factory when limit reached
         if (_makeCount >= MakeLimit)
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
 
         _lastMake += Time.deltaTime; //_lastMake = _lastMake + Time.deltaTime;
@@ -43,17 +43,17 @@ public class Factory : MonoBehaviour
             _lastMake = 0; //reset time counter
             _makeCount++; //increase agent make count by one
 
-            GameObject prefab = Prefabs[Random.Range(0, Prefabs.Length)]; //random prefab
+            GameObject prefab = Prefab1;
+            if (_prefab)
+            {
+                prefab = Prefab2;
+            }
+            _prefab = !_prefab; //switch boolean
+
+            //GameObject prefab = Prefabs[Random.Range(0, Prefabs.Length)]; //random prefab
             GameObject go = Instantiate(prefab, this.transform.position, Quaternion.identity);
             MobileUnit mu = go.GetComponent<MobileUnit>();
-            mu.Target = Manager.Instance.GetTarget();
-            mu._factory = this;
+            mu.Target = Target;
         }
-    }
-
-    public void DestroyFactory()
-    {
-        Manager.Instance.RemoveTargetFromList(Target);
-        Destroy(this.gameObject);
     }
 }
