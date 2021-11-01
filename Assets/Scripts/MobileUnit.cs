@@ -7,10 +7,12 @@ using System.Linq;
 public class MobileUnit : MonoBehaviour
 {
     public GameObject Target;
-    public GameObject[] Positions;
+    public GameObject[] SquarePositions;
+    public GameObject[] TrianglePositions;
     private NavMeshAgent Agent;
     public GameObject Factory; //factory prefab to instantiate
-    private Dictionary<GameObject, GameObject> Configure = new Dictionary<GameObject, GameObject>();
+    private Dictionary<GameObject, GameObject> SquareConfigure = new Dictionary<GameObject, GameObject>();
+    private Dictionary<GameObject, GameObject> TriangleConfigure = new Dictionary<GameObject, GameObject>();
 
     [HideInInspector]
     public bool _reachedTarget = false;
@@ -20,25 +22,48 @@ public class MobileUnit : MonoBehaviour
     {
         Agent = this.GetComponent<NavMeshAgent>();
         Agent.SetDestination(Target.transform.position);
-        foreach (GameObject pos in Positions)
+        foreach (GameObject pos in SquarePositions)
         {
-            Configure.Add(pos, null);
+            SquareConfigure.Add(pos, null);
+        }
+        foreach (GameObject pos in TrianglePositions)
+        {
+            TriangleConfigure.Add(pos, null);
         }
     }
 
     public void StartConfigure(GameObject go)
     {
         Debug.Log("StartConfigure");
-        List<GameObject> keys = Configure.Keys.ToList();
-        foreach (GameObject key in keys)
+        if (go.transform.parent.name.ToLower().Contains("square"))
         {
-            //guard statement
-            if (Configure[key] != null) { continue; } //go to the next loop iteration
-            Configure[key] = go;
-            go.GetComponentInParent<NavMeshAgent>().enabled = false;
-            go.GetComponentInParent<MobileUnit>().enabled = false;
-            go.GetComponent<CollisionDetection>().enabled = false;
-            break;
+            Debug.Log("square");
+            List<GameObject> keys = SquareConfigure.Keys.ToList();
+            foreach (GameObject key in keys)
+            {
+                //guard statement
+                if (SquareConfigure[key] != null) { continue; } //go to the next loop iteration
+                SquareConfigure[key] = go;
+                go.GetComponentInParent<NavMeshAgent>().enabled = false;
+                go.GetComponentInParent<MobileUnit>().enabled = false;
+                go.GetComponent<CollisionDetection>().enabled = false;
+                break;
+            }
+        }
+        if (go.transform.parent.name.ToLower().Contains("triangle"))
+        {
+            Debug.Log("triangle");
+            List<GameObject> keys = TriangleConfigure.Keys.ToList();
+            foreach (GameObject key in keys)
+            {
+                //guard statement
+                if (TriangleConfigure[key] != null) { continue; } //go to the next loop iteration
+                TriangleConfigure[key] = go;
+                go.GetComponentInParent<NavMeshAgent>().enabled = false;
+                go.GetComponentInParent<MobileUnit>().enabled = false;
+                go.GetComponent<CollisionDetection>().enabled = false;
+                break;
+            }
         }
     }
 
@@ -47,35 +72,22 @@ public class MobileUnit : MonoBehaviour
     {
         if (_reachedTarget)
         {
-            bool allConfig = true;
-            foreach (KeyValuePair<GameObject, GameObject> kvp in Configure)
+            bool triConfig = ConfigureShapes(TriangleConfigure);
+            bool sqConfig = ConfigureShapes(SquareConfigure);
+            if (triConfig && sqConfig) //if each agent is in position
             {
-                //guard statement
-                if (kvp.Value == null) { allConfig = false; continue; }
-                if (kvp.Key.transform.position == kvp.Value.transform.position) { continue; }
-
-                //move object into position
-                GameObject cAgent = kvp.Value;
-                Vector3 pos = kvp.Key.transform.position;
-                Quaternion rot = kvp.Key.transform.rotation;
-                cAgent.transform.position = Vector3.Lerp(cAgent.transform.position, pos, Time.deltaTime);
-                cAgent.transform.rotation = Quaternion.Lerp(cAgent.transform.rotation, rot, Time.deltaTime);
-                if (Vector3.Distance(cAgent.transform.position, pos) < 0.05f)
-                {
-                    cAgent.transform.position = pos;
-                    cAgent.transform.rotation = rot;
-                }
-                allConfig = false;
-            }
-
-            if (allConfig) //if each agent is in position
-            {
-                List<GameObject> keys = Configure.Keys.ToList(); //get dictionary keys as list
+                List<GameObject> keys = SquareConfigure.Keys.ToList(); //get dictionary keys as list
                 foreach (GameObject key in keys)
                 {
-                    GameObject go = Configure[key]; //get agent associated with this key
+                    GameObject go = SquareConfigure[key]; //get agent associated with this key
                     Destroy(go); //delete all agents in configure positions
-                    //go.GetComponent<Collider>().isTrigger = false;
+                }
+
+                keys = TriangleConfigure.Keys.ToList(); //get dictionary keys as list
+                foreach (GameObject key in keys)
+                {
+                    GameObject go = TriangleConfigure[key]; //get agent associated with this key
+                    Destroy(go); //delete all agents in configure positions
                 }
 
                 GameObject factory = Instantiate(Factory, transform.position, transform.rotation); //create factory
@@ -90,6 +102,31 @@ public class MobileUnit : MonoBehaviour
         Debug.DrawLine(this.transform.position, Target.transform.position, Color.black);
         Debug.DrawRay(this.transform.position, this.transform.forward, Color.red);
         HasReachedTarget();
+    }
+
+    public bool ConfigureShapes(Dictionary<GameObject, GameObject> Configure)
+    {
+        bool allConfig = true;
+        foreach (KeyValuePair<GameObject, GameObject> kvp in Configure)
+        {
+            //guard statement
+            if (kvp.Value == null) { allConfig = false; continue; }
+            if (kvp.Key.transform.position == kvp.Value.transform.position) { continue; }
+
+            //move object into position
+            GameObject cAgent = kvp.Value;
+            Vector3 pos = kvp.Key.transform.position;
+            Quaternion rot = kvp.Key.transform.rotation;
+            cAgent.transform.position = Vector3.Lerp(cAgent.transform.position, pos, Time.deltaTime);
+            cAgent.transform.rotation = Quaternion.Lerp(cAgent.transform.rotation, rot, Time.deltaTime);
+            if (Vector3.Distance(cAgent.transform.position, pos) < 0.05f)
+            {
+                cAgent.transform.position = pos;
+                cAgent.transform.rotation = rot;
+            }
+            allConfig = false;
+        }
+        return allConfig;
     }
 
     private void HasReachedTarget()
