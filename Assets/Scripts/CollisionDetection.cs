@@ -18,5 +18,6 @@ public class CollisionDetection : MonoBehaviour
         GameObject go = other.gameObject;
         if (go.tag != "Agent") { return; }
         _mobileUnit.StartConfigure(go);
+        //other.enabled = !other.enabled;
     }
 }

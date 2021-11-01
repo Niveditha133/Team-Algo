@@ -204,13 +204,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   Positions:
-  - {fileID: 4107121316655598216}
-  - {fileID: 6148409363074019381}
   - {fileID: 4527236917617988997}
+  - {fileID: 6148409363074019381}
   - {fileID: 8894422052844587731}
+  - {fileID: 4107121316655598216}
   - {fileID: 4787679499093944032}
   - {fileID: 1984053862387704820}
-  - {fileID: 7425683603709497933}
   Factory: {fileID: 5920528985020772893, guid: 8d78af1be8322ab4fb74b70d020df0ae, type: 3}
   _reachedTarget: 0
 --- !u!195 &5452635593647275806
@@ -222,7 +221,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 7237580640192784885}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.25
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -231,7 +230,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1
+  m_Height: 0.25
   m_BaseOffset: 2
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4

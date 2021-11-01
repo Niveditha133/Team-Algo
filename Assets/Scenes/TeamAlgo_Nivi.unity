@@ -2838,11 +2838,7 @@ PrefabInstance:
     - target: {fileID: 1647853876, guid: 8d78af1be8322ab4fb74b70d020df0ae, type: 3}
       propertyPath: Prefab1
       value: 
-      objectReference: {fileID: 7237580640192784885, guid: db8581eb6518bb44e850175001991776, type: 3}
-    - target: {fileID: 1647853876, guid: 8d78af1be8322ab4fb74b70d020df0ae, type: 3}
-      propertyPath: MakeLimit
-      value: 7
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 435272781278530343, guid: 905ff821cab413043864cbee647de9ef, type: 3}
     - target: {fileID: 1647853876, guid: 8d78af1be8322ab4fb74b70d020df0ae, type: 3}
       propertyPath: Prefabs.Array.size
       value: 1
@@ -2850,7 +2846,7 @@ PrefabInstance:
     - target: {fileID: 1647853876, guid: 8d78af1be8322ab4fb74b70d020df0ae, type: 3}
       propertyPath: Prefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 7237580640192784885, guid: db8581eb6518bb44e850175001991776, type: 3}
+      objectReference: {fileID: 435272781278530343, guid: 905ff821cab413043864cbee647de9ef, type: 3}
     - target: {fileID: 5920528985020772889, guid: 8d78af1be8322ab4fb74b70d020df0ae, type: 3}
       propertyPath: m_RootOrder
       value: 11
