@@ -20,8 +20,8 @@ public class Factory : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        GameObject[] targets = GameObject.FindGameObjectsWithTag(TargetTag);
-        Target = targets[Random.Range(0, targets.Length)];
+        /*GameObject[] targets = GameObject.FindGameObjectsWithTag(TargetTag);
+        Target = targets[Random.Range(0, targets.Length)];*/
     }
 
     // Update is called once per frame

@@ -15,7 +15,7 @@ public class MainCamera : MonoBehaviour
     private void Update()
     {
         //get input
-        Vector3 joy = new Vector3(Input.GetAxis("LeftJoyX"), 0, Input.GetAxis("LeftJoyY"));
+        Vector3 joy = new Vector3(Input.GetAxis("LeftJoyX"), Input.GetAxis("RightJoyX"), Input.GetAxis("LeftJoyY"));
 
         //camera vectors
         Vector3 forward = Camera.main.transform.forward;
@@ -25,12 +25,14 @@ public class MainCamera : MonoBehaviour
         Vector3 right = Camera.main.transform.right;
         Debug.DrawRay(transform.position, right * 10, Color.black);
 
+        Vector3 up = Camera.main.transform.up;
+
         //only continue if joystick pressed more than 0.3f
         if (joy.magnitude < 0.3f) { return; }
         Debug.Log("Camera Move");
 
         //move camera
-        Vector3 move = right * joy.x + project * -joy.z;
+        Vector3 move = right * joy.x + project * -joy.z + up * -joy.y;
         transform.Translate(move.normalized * Time.deltaTime * Speed);
         Debug.DrawRay(transform.position, move, Color.red);
     }

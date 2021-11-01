@@ -72,7 +72,7 @@ public class OnCollision : MonoBehaviour
             Debug.Log("Score = 0");
 
             this.gameObject.GetComponent<Tessellate>().enabled = true;
-            this.gameObject.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+            this.gameObject.transform.localScale = new Vector3(0.30f, 0.30f, 0.30f);
             //this.gameObject.transform.position = _offset; //- Ask Matt
 
             //Destroy(this.gameObject); - add later if you want to destroy

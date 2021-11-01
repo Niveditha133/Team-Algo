@@ -18,7 +18,7 @@ GameObject:
   m_TagString: Factory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &5920528985020772889
 Transform:
