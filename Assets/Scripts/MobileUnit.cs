@@ -90,10 +90,10 @@ public class MobileUnit : MonoBehaviour
                     Destroy(go); //delete all agents in configure positions
                 }
 
-                GameObject factory = Instantiate(Factory, transform.position, transform.rotation); //create factory
+                /*GameObject factory = Instantiate(Factory, transform.position, transform.rotation); //create factory
                 float moveY = factory.transform.localScale.y / 2.0f; //get half factory height
                 factory.transform.position += new Vector3(0, moveY, 0); //move factory up
-                Destroy(gameObject); //destroy the agent this script is attached to
+                Destroy(gameObject); //destroy the agent this script is attached to*/
             }
 
             return; //exit so we don't do any more code in Update()

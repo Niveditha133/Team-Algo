@@ -11,7 +11,9 @@ public class OnCollision : MonoBehaviour
     public Material Score10;
     public Material Score5;
     public Material Score0;
+
     //private Renderer _rend;
+    //private Vector3 _offset;
 
     /*private void OnCollidorEnter(Collision col)
     {
@@ -27,6 +29,11 @@ public class OnCollision : MonoBehaviour
             Destroy(this.gameObject);
             Debug.Log("Target Destroyed");
         }
+    }*/
+
+    /*private void Start()
+    {
+        _offset = new Vector3(0, -2f, 0);
     }*/
 
     // Update is called once per frame
@@ -66,7 +73,7 @@ public class OnCollision : MonoBehaviour
 
             this.gameObject.GetComponent<Tessellate>().enabled = true;
             this.gameObject.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
-            //this.gameObject.transform.position = new Vector3(0, -2.25f, 0); - Ask Matt
+            //this.gameObject.transform.position = _offset; //- Ask Matt
 
             //Destroy(this.gameObject); - add later if you want to destroy
         }

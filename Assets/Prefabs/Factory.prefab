@@ -109,10 +109,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d686e2b219aebb46a47ac7612a7a418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefab1: {fileID: 7237580640192784885, guid: db8581eb6518bb44e850175001991776, type: 3}
-  Prefab2: {fileID: 7237580640192784885, guid: db8581eb6518bb44e850175001991776, type: 3}
+  Prefab1: {fileID: 5045898656500547353, guid: 47a27b1c858b6a84aaba76caa486579f, type: 3}
+  Prefab2: {fileID: 3121003208794380133, guid: 5947a8859b0e37a408bae6ab1d907c07, type: 3}
   Prefabs:
-  - {fileID: 7237580640192784885, guid: db8581eb6518bb44e850175001991776, type: 3}
+  - {fileID: 5045898656500547353, guid: 47a27b1c858b6a84aaba76caa486579f, type: 3}
+  - {fileID: 3121003208794380133, guid: 5947a8859b0e37a408bae6ab1d907c07, type: 3}
   TargetTag: Target
   MakeLimit: 12
   Target: {fileID: 0}
