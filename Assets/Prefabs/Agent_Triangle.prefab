@@ -158,6 +158,7 @@ GameObject:
   - component: {fileID: 6458629339865276813}
   - component: {fileID: 9092042523513157172}
   - component: {fileID: 4318914586955428063}
+  - component: {fileID: 7066444637725610218}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Agent
@@ -270,6 +271,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17db30ad0e6fcc2469efefcbc13f7b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7066444637725610218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487501928616526167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96d0b63bd1642754196f04a212afd9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Score: 25
 --- !u!1 &2133329739434102840
 GameObject:
   m_ObjectHideFlags: 0

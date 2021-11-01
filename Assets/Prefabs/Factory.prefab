@@ -92,7 +92,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 5920528985020772893}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -110,10 +110,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab1: {fileID: 7237580640192784885, guid: db8581eb6518bb44e850175001991776, type: 3}
-  Prefab2: {fileID: 435272781278530343, guid: 905ff821cab413043864cbee647de9ef, type: 3}
+  Prefab2: {fileID: 7237580640192784885, guid: db8581eb6518bb44e850175001991776, type: 3}
   Prefabs:
   - {fileID: 7237580640192784885, guid: db8581eb6518bb44e850175001991776, type: 3}
-  - {fileID: 435272781278530343, guid: 905ff821cab413043864cbee647de9ef, type: 3}
   TargetTag: Target
   MakeLimit: 12
   Target: {fileID: 0}

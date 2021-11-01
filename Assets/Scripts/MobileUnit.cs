@@ -75,6 +75,7 @@ public class MobileUnit : MonoBehaviour
                 {
                     GameObject go = Configure[key]; //get agent associated with this key
                     Destroy(go); //delete all agents in configure positions
+                    //go.GetComponent<Collider>().isTrigger = false;
                 }
 
                 GameObject factory = Instantiate(Factory, transform.position, transform.rotation); //create factory
