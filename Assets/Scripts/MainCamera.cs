@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MainCamera : MonoBehaviour
 {
-    public float Speed = 3.0f;
+    public float Speed = 2.0f;
+    //public Transform CameraTarget;
 
     // Start is called before the first frame update
     private void Start()
@@ -35,5 +36,7 @@ public class MainCamera : MonoBehaviour
         Vector3 move = right * joy.x + project * -joy.z + up * -joy.y;
         transform.Translate(move.normalized * Time.deltaTime * Speed);
         Debug.DrawRay(transform.position, move, Color.red);
+
+        //transform.LookAt(CameraTarget.position);
     }
 }
