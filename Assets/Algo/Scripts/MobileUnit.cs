@@ -80,14 +80,14 @@ public class MobileUnit : MonoBehaviour
                 foreach (GameObject key in keys)
                 {
                     GameObject go = SquareConfigure[key]; //get agent associated with this key
-                    Destroy(go); //delete all agents in configure positions
+                    //Destroy(go); //delete all agents in configure positions
                 }
 
                 keys = TriangleConfigure.Keys.ToList(); //get dictionary keys as list
                 foreach (GameObject key in keys)
                 {
                     GameObject go = TriangleConfigure[key]; //get agent associated with this key
-                    Destroy(go); //delete all agents in configure positions
+                    //Destroy(go); //delete all agents in configure positions
                 }
 
                 /*GameObject factory = Instantiate(Factory, transform.position, transform.rotation); //create factory
