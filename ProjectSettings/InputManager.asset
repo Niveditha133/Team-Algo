@@ -41,10 +41,10 @@ InputManager:
     m_Name: RightJoyX
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: left ctrl
-    altNegativeButton: 
-    altPositiveButton: mouse 0
+    negativeButton: left
+    positiveButton: right
+    altNegativeButton: a
+    altPositiveButton: d
     gravity: 3
     dead: 0.001
     sensitivity: 3

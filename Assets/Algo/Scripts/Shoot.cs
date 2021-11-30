@@ -22,8 +22,8 @@ public class Shoot : MonoBehaviour
             ball = Instantiate(projectilePrefab, transform.position, transform.rotation);
             ball.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, shootPower, 0));
 
-            //    Debug.DrawRay(this.transform.position, transform.forward);
-            // ballRigidbody.velocity = transform.forward * shootPower;
+            //Debug.DrawRay(this.transform.position, transform.forward);
+            //ballRigidbody.velocity = transform.forward * shootPower;
         }
     }
 }

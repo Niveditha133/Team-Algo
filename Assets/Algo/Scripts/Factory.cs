@@ -31,10 +31,10 @@ public class Factory : MonoBehaviour
         if (Target == null) { return; }
 
         //destroy factory when limit reached
-        /*if (_makeCount >= MakeLimit)
+        if (_makeCount >= MakeLimit)
         {
             Destroy(gameObject);
-        }*/
+        }
 
         _lastMake += Time.deltaTime; //_lastMake = _lastMake + Time.deltaTime;
         if (_lastMake > MakeRate)
