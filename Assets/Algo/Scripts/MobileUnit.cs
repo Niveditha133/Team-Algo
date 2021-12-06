@@ -99,8 +99,8 @@ public class MobileUnit : MonoBehaviour
             return; //exit so we don't do any more code in Update()
         }
 
-        Debug.DrawLine(this.transform.position, Target.transform.position, Color.black);
-        Debug.DrawRay(this.transform.position, this.transform.forward, Color.red);
+        //Debug.DrawLine(this.transform.position, Target.transform.position, Color.black);
+        //Debug.DrawRay(this.transform.position, this.transform.forward, Color.red);
         HasReachedTarget();
     }
 

@@ -5,6 +5,8 @@ using UnityEngine;
 public class CollisionDetection : MonoBehaviour
 {
     private MobileUnit _mobileUnit;
+    //private MeshCollider _mesh;
+    //private RigidbodyConstraints _rigidbodyCons;
 
     // Start is called before the first frame update
     private void Start()
@@ -19,5 +21,14 @@ public class CollisionDetection : MonoBehaviour
         if (go.tag != "Agent") { return; }
         _mobileUnit.StartConfigure(go);
         //other.enabled = !other.enabled;
+
+        //if (_mobileUnit._reachedTarget) { other.gameObject.GetComponent<NavMeshObstacle>().enabled = true; }
+
+        /*if (_mobileUnit._reachedTarget) { other.gameObject.GetComponent<MeshCollider>().isTrigger = false; }
+        if (other.isTrigger == false)
+        {
+            _rigidbodyCons = RigidbodyConstraints.FreezePositionX |
+                  RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY;
+        }*/
     }
 }
