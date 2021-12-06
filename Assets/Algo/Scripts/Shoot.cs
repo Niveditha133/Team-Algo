@@ -26,7 +26,11 @@ public class Shoot : MonoBehaviour
         */
         if (Input.GetButtonDown("East"))
         {
+            Vector3 direction = Camera.main.transform.forward;
+            direction.y += 50;
+
             ball = Instantiate(projectilePrefab, transform.position, transform.rotation);
+
             ball.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * shootPower);
 
             Debug.DrawRay(this.transform.position, Camera.main.transform.forward * 4, Color.red);

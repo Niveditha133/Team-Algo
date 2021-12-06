@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class OnCollision : MonoBehaviour
 {
-    public float Score = 25;
+    public float Score = 35;
     public Material Original;
+    public Material Score25;
     public Material Score20;
     public Material Score15;
     public Material Score10;
@@ -41,9 +42,14 @@ public class OnCollision : MonoBehaviour
     {
         MeshRenderer mr = this.GetComponent<MeshRenderer>();
 
-        if (Score == 25)
+        if (Score == 30)
         {
             mr.material = Original;
+            Debug.Log("Score = 30");
+        }
+        else if (Score == 25)
+        {
+            mr.material = Score25;
             Debug.Log("Score = 25");
         }
         else if (Score == 20)
@@ -65,17 +71,19 @@ public class OnCollision : MonoBehaviour
         {
             mr.material = Score5;
             Debug.Log("Score = 5");
+
+            this.gameObject.GetComponent<Tessellate>().enabled = true;
+            this.gameObject.transform.localScale = new Vector3(0.30f, 0.30f, 0.30f);
+            //this.gameObject.transform.position = _offset; //- Ask Matt
         }
         else if (Score == 0)
         {
             mr.material = Score0;
             Debug.Log("Score = 0");
 
-            this.gameObject.GetComponent<Tessellate>().enabled = true;
-            this.gameObject.transform.localScale = new Vector3(0.30f, 0.30f, 0.30f);
-            //this.gameObject.transform.position = _offset; //- Ask Matt
+            Destroy(this.gameObject); //- add later if you want to destroy
 
-            //Destroy(this.gameObject); - add later if you want to destroy
+            ScoreManager.instance.AddScore();
         }
         //_rend = this.gameObject.GetComponent<Renderer>();
 

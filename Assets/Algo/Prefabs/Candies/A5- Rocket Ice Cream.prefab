@@ -83,6 +83,9 @@ GameObject:
   - component: {fileID: 878844114624123948}
   - component: {fileID: 69876316525711394}
   - component: {fileID: 3381135595734224372}
+  - component: {fileID: 5417829917357909347}
+  - component: {fileID: 2586682059198764548}
+  - component: {fileID: 1563853746229119450}
   m_Layer: 0
   m_Name: TransPop
   m_TagString: Agent
@@ -153,3 +156,43 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5417829917357909347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6715443642229609441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17db30ad0e6fcc2469efefcbc13f7b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2586682059198764548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6715443642229609441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9335b8de10c93a64896ec6bca5d24bb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!208 &1563853746229119450
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6715443642229609441}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 21.758001, y: 22.946001, z: 106.9}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -174.712, y: -0.026, z: -12.224001}
+  m_TimeToStationary: 0.5

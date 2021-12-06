@@ -293,6 +293,7 @@ GameObject:
   - component: {fileID: 5766616516880874193}
   - component: {fileID: 4970679796211039714}
   - component: {fileID: 8578900017458990886}
+  - component: {fileID: 3087320850117764538}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Agent
@@ -417,8 +418,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d0b63bd1642754196f04a212afd9f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Score: 25
+  Score: 30
   Original: {fileID: 2100000, guid: 34950a27a6b9b974dbed6df8ff0e02e5, type: 2}
+  Score25: {fileID: 2100000, guid: 2dc9626e6cfa4c34eb0dfa02edc8bf8f, type: 2}
   Score20: {fileID: 2100000, guid: 2a9adb761c5d85e4cb4dfe97a66bea66, type: 2}
   Score15: {fileID: 2100000, guid: 118e613192808594794dd5adb4507885, type: 2}
   Score10: {fileID: 2100000, guid: 4ca6898c49968054da6ab34e3a1752d7, type: 2}
@@ -455,6 +457,22 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: -0.125}
+--- !u!208 &3087320850117764538
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6100248078960342377}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.53, y: 0.58, z: 0.155}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: -0.125}
+  m_TimeToStationary: 0.5
 --- !u!1 &6471929440920189017
 GameObject:
   m_ObjectHideFlags: 0

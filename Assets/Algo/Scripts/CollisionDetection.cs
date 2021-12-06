@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class CollisionDetection : MonoBehaviour
 {
@@ -22,7 +23,9 @@ public class CollisionDetection : MonoBehaviour
         _mobileUnit.StartConfigure(go);
         //other.enabled = !other.enabled;
 
-        //if (_mobileUnit._reachedTarget) { other.gameObject.GetComponent<NavMeshObstacle>().enabled = true; }
+        if (_mobileUnit._reachedTarget) { other.gameObject.GetComponent<NavMeshObstacle>().enabled = true; }
+
+        //if (_mobileUnit._reachedTarget) { other.gameObject.GetComponent<NavMeshObstacle>().enabled = false; }
 
         /*if (_mobileUnit._reachedTarget) { other.gameObject.GetComponent<MeshCollider>().isTrigger = false; }
         if (other.isTrigger == false)

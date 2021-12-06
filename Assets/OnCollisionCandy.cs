@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class OnCollisionCandy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnCollidorEnter(Collision can)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (can.gameObject.name == "Projectile")
+        {
+            Destroy(can.gameObject);
+            Debug.Log("Candy Destroyed");
+        }
     }
 }
